@@ -1,0 +1,10 @@
+.tabs {
+    &__list {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__item {
+        overflow: hidden;
+    }
+}

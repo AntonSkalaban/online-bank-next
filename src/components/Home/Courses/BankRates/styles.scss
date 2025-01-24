@@ -1,0 +1,10 @@
+.courses-table {
+  max-width: 600px;
+
+  &__row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 200px 200px;
+  }
+}
+

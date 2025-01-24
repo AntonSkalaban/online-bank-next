@@ -1,0 +1,10 @@
+.currency-info {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+
+  &__img {
+    width: 23px;
+    height: 20px;
+  }
+}

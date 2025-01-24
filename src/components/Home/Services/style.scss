@@ -1,0 +1,22 @@
+.services {
+  position: relative;
+  padding: 16px 0;
+}
+
+.services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: var(--whitesmoke);
+  z-index: -1;
+}
+
+.card-btn-list {
+  display: flex;
+  gap: 16px;
+  padding: 0 16px 0 16px;
+}

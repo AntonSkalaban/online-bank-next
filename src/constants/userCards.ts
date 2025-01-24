@@ -1,0 +1,40 @@
+import { UserCard } from "types/products";
+
+export const userCards: UserCard[] = [
+  {
+    id: "user-card-1",
+    paymentSystem: "Visa",
+    name: "Visa Classic",
+    period: 60,
+    currency: "USD",
+    isVirtual: false,
+    cardNumber: "1111 1111 1111 1111",
+    expirationDate: "12/25",
+    balance: 1500.75,
+    ownerId: "user-123",
+  },
+  {
+    id: "user-card-2",
+    paymentSystem: "MasterCard",
+    name: "MasterCard Gold",
+    period: 48,
+    currency: "EUR",
+    isVirtual: false,
+    cardNumber: "2222 2222 2222 2222",
+    expirationDate: "06/27",
+    balance: 5000.0,
+    ownerId: "user-123",
+  },
+  {
+    id: "user-card-3",
+    paymentSystem: "Visa",
+    name: "Virtual Visa",
+    period: 24,
+    currency: "USD",
+    isVirtual: true,
+    cardNumber: "3333 3333 3333 3333",
+    expirationDate: "01/26",
+    balance: 250.5,
+    ownerId: "user-123",
+  },
+];
