@@ -1,5 +1,8 @@
-.official-courses-table__row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.courses-table {
+  &.courses-table_official-rates {
+    .courses-table__row {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }

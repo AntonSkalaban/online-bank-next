@@ -1,4 +1,4 @@
-import { ExchangeRatesResponse } from "types/currenycy";
+import { ExchangeRatesResponse } from "types/currency";
 
 export const exchangeRates: ExchangeRatesResponse = {
   meta: {

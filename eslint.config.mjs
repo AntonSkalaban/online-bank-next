@@ -12,9 +12,10 @@ const eslintConfig = [
         "error",
         {
           groups: [
-            ["^react", "^next"],
+            ["^react", "^next",'@tanstack/react-query'],
             [
               "^@?\\w",
+              "^(api)(/.*|$)",
               "^(app)(/.*|$)",
               "^(components)(/.*|$)",
               "^(helpers)(/.*|$)",

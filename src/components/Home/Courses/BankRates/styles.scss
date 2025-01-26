@@ -1,10 +1,8 @@
 .courses-table {
-  max-width: 600px;
-
-  &__row {
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto 200px 200px;
+    &.courses-table_bank-rates {
+      .courses-table__row {
+        grid-template-columns: auto max-content max-content;
+        gap: 10px;
+      }
+    }
   }
-}
-

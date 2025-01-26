@@ -1,1 +1,1 @@
-export * from "./CurrencyInfo";
+export * from "./Table";

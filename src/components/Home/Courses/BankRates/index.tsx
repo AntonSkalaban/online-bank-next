@@ -1,37 +1,48 @@
+"use client";
 import { FC } from "react";
+import { useQuery } from "@tanstack/react-query";
 
-import { exchangeRates } from "constants/exchangeRates";
+import { CurrencyApi } from "api/Currency";
 
-import { CurrencyInfo } from "../UI";
+import { Table } from "../UI/Table";
 import { getBankCourse } from "./helpers";
 
 import "./styles.scss";
 
 export const BankRates: FC = () => {
-  const { data: ratesData } = exchangeRates;
+  const { data, isFetching , error} = useQuery({
+    ...CurrencyApi.getCurrency(),
+    select: (data) => ({
+      data: Object.values(data.data),
+      lastUpdate: data.meta.last_updated_at,
+    }),
+  });
 
+  console.log(data, isFetching, error)
   return (
-    <div className="banks-rates-table">
-      <div className="banks-rates-table__row courses-table__row">
-        <span className="body-small">Currency</span>
-
-        <span className="body-small">Purchase</span>
-        <span className="body-small">Sale</span>
-      </div>
-
-      <ul className="courses__list">
-        {Object.values(ratesData).map(({ code, value }) => (
-          <li key={code} className="courses__list-item courses-table__row">
-            <CurrencyInfo currencyCode={code} />
-
+    <div>
+      <Table
+        tableClassName={"bank-rates"}
+        data={data?.data}
+        isFetching={isFetching}
+        headerRowContent={
+          <>
+            <span className="body-small">Currency</span>
+            <span className="body-small">Purchase</span>
+            <span className="body-small">Sale</span>
+          </>
+        }
+        renderRowContent={(value) => (
+          <>
             <span className="body-small">
               {getBankCourse(value, "purchase")}
             </span>
-
             <span className="body-small">{getBankCourse(value, "sale")}</span>
-          </li>
-        ))}
-      </ul>
+          </>
+        )}
+      />
+
+      <p className="body-small">Last update {data?.lastUpdate}</p>
     </div>
   );
 };

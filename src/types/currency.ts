@@ -3,13 +3,13 @@ export interface CurrencyData {
   value: number;
 }
 
-export interface ExchangeRatesData {
+export interface CurrencyExchangeData {
   [currencyCode: string]: CurrencyData;
 }
 
-export interface ExchangeRatesResponse {
+export interface CurrencyResponse {
   meta: {
     last_updated_at: string;
   };
-  data: ExchangeRatesData;
+  data: CurrencyExchangeData;
 }

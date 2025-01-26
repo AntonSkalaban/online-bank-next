@@ -1,0 +1,19 @@
+.courses-table__row {
+  display: grid;
+  
+}
+
+.courses-table-item {
+  margin-bottom: 10px;
+  &_currency-info {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  &_img {
+    width: 23px;
+    height: 20px;
+  }
+
+}
