@@ -23,8 +23,8 @@ export const Credit: FC<CreditProps> = ({
           </p>
         </div>
         <div className="product__row product__row_bottom">
-          <p className="body-small">{creditType}</p>
-          <p className="body-small">{interestRate}%</p>
+          <p className="body-medium">{creditType}</p>
+          <p className="body-medium">{interestRate}%</p>
         </div>
       </div>
     </div>

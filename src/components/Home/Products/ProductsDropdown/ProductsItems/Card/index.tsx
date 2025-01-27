@@ -21,8 +21,8 @@ export const Card: FC<CardProps> = ({
           </p>
         </div>
         <div className="product__row product__row_bottom">
-          <p className="body-small"> {name}</p>
-          <p className="body-small">••{showLatestNumbers(cardNumber)}</p>
+          <p className="body-medium"> {name}</p>
+          <p className="body-medium">••{showLatestNumbers(cardNumber)}</p>
         </div>
       </div>
     </div>

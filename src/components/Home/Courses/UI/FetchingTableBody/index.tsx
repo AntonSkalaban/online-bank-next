@@ -8,6 +8,7 @@ import "./style.scss";
 
 export const FetchingTableBody: FC<FetchingTableBodyProps> = ({
   data,
+  isError,
   isFetching,
   renderRowContent,
 }) => {
@@ -24,6 +25,7 @@ export const FetchingTableBody: FC<FetchingTableBodyProps> = ({
     );
   }
 
+  if (isError) return <p>Error...</p>;
   if (!data?.length) return <p>No data</p>;
 
   if (data) {

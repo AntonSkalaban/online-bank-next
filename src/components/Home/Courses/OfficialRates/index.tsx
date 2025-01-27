@@ -9,7 +9,7 @@ import { Table } from "../UI";
 import "./styles.scss";
 
 export const OfficialRates: FC = () => {
-  const { data, isFetching } = useQuery({
+  const { data, isFetching, isError } = useQuery({
     ...CurrencyApi.getCurrency(),
     select: (data) => ({
       data: Object.values(data.data),
@@ -20,6 +20,7 @@ export const OfficialRates: FC = () => {
   return (
     <div>
       <Table
+        isError={isError}
         tableClassName={"official-rates"}
         data={data?.data}
         isFetching={isFetching}

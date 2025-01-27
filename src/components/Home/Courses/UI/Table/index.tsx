@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { FetchingTableBody } from "../TableBody";
+import { FetchingTableBody } from "../FetchingTableBody";
 import { TableProps } from "./types";
 
 import "./styles.scss";
@@ -11,6 +11,7 @@ export const Table: FC<TableProps> = ({
   renderRowContent,
   isFetching,
   data,
+  isError,
 }) => {
   return (
     <div className={`courses-table courses-table_${tableClassName || ""}`}>
@@ -19,6 +20,7 @@ export const Table: FC<TableProps> = ({
       </div>
 
       <FetchingTableBody
+        isError={isError}
         data={data}
         isFetching={isFetching}
         renderRowContent={renderRowContent}

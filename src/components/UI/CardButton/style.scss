@@ -1,4 +1,6 @@
 .card-btn {
+  width: 160px;
+
   display: flex;
   -webkit-box-align: stretch;
   align-items: stretch;
@@ -18,11 +20,14 @@
 
   user-select: none;
   cursor: pointer;
+  padding: 16px;
 
   &_medium {
-    width: 160px;
     height: 156px;
-    padding: 16px;
+  }
+
+  &_big {
+    height: 200px;
   }
 
   &__img-container {

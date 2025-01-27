@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export interface ICardButton {
   title: string;
   subtitle?: string;
-  Icon: string;
+  img: string;
   route: string;
 }
 

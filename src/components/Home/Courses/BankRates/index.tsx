@@ -10,7 +10,7 @@ import { getBankCourse } from "./helpers";
 import "./styles.scss";
 
 export const BankRates: FC = () => {
-  const { data, isFetching , error} = useQuery({
+  const { data, isFetching, isError } = useQuery({
     ...CurrencyApi.getCurrency(),
     select: (data) => ({
       data: Object.values(data.data),
@@ -18,11 +18,11 @@ export const BankRates: FC = () => {
     }),
   });
 
-  console.log(data, isFetching, error)
   return (
     <div>
       <Table
         tableClassName={"bank-rates"}
+        isError={isError}
         data={data?.data}
         isFetching={isFetching}
         headerRowContent={
