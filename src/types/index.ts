@@ -4,7 +4,7 @@ export interface ICardButton {
   title: string;
   subtitle?: string;
   img: string;
-  route: string;
+  href: string;
 }
 
 export interface ITabs {

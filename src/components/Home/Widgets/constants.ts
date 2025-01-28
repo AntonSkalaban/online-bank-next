@@ -1,10 +1,11 @@
 import Diagram from "assets/svg/diagram.svg";
+import { ICardButton } from "types";
 
-export const widgetsData = [
+export const widgetsData: ICardButton[] = [
   {
-    title: "Total funds ",
+    title: "Total funds",
     subtitle: "Shows all your accumulations",
     img: Diagram,
-    route: "",
+    href: "total-funds",
   },
 ];

@@ -1,18 +1,17 @@
 "use client";
 import { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { CardButtonProps } from "./types";
 import "./style.scss";
 
 export const CardButton: FC<CardButtonProps> = ({
-  data: { title, subtitle, img },
+  data: { title, subtitle, img, href },
   btnSize = "medium",
 }) => {
-  const handleClick = () => {};
-
   return (
-    <button className={`card-btn card-btn_${btnSize}`} onClick={handleClick}>
+    <Link className={`card-btn card-btn_${btnSize}`} href={href}>
       <div
         className={`card-btn__img-container card-btn__img-container_${btnSize}`}
       >
@@ -20,6 +19,6 @@ export const CardButton: FC<CardButtonProps> = ({
       </div>
       <p className="card-btn__title body-big">{title}</p>
       {subtitle && <p className="card-btn__title body-medium">{subtitle}</p>}
-    </button>
+    </Link>
   );
 };

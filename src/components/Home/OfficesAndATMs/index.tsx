@@ -11,7 +11,10 @@ export const OfficesAndATMs: FC = () => {
     <section className="section offices-and-atms">
       <h3 className="section-title headline headline_3">Offices and ATMs</h3>
 
-      <Link href="/map?filter=atms%25banks" className="offices-and-atms__link">
+      <Link
+        href="/map?filter=atLinkms%25banks"
+        className="offices-and-atms__link"
+      >
         <div className="offices-and-atms__img-container">
           <Image src={Map} alt="map-icon" />
         </div>
