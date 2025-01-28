@@ -1,4 +1,10 @@
-import { Courses, Products, Services, Widgets } from "components/Home";
+import {
+  // Courses,
+  OfficesAndATMs,
+  Products,
+  Services,
+  Widgets,
+} from "components/Home";
 import { Wrapper } from "components/UI";
 
 import "./style.scss";
@@ -10,7 +16,8 @@ export default function Home() {
         <Services />
         <Products />
         <Widgets />
-        <Courses />
+        {/* <Courses /> */}
+        <OfficesAndATMs />
       </Wrapper>
     </div>
   );

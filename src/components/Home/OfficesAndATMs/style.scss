@@ -1,0 +1,14 @@
+.offices-and-atms {
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+  }
+}
