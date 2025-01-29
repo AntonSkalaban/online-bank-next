@@ -1,5 +1,7 @@
+export type ProductsType = "cards" | "credits";
+export type PaymentSystem = "Visa" | "MasterCard";
 export interface CardTemplate {
-  paymentSystem: "Visa" | "MasterCard";
+  paymentSystem: PaymentSystem;
   name: string;
   period: number;
   currency: string;
@@ -9,7 +11,7 @@ export interface CardTemplate {
 export interface UserCard extends CardTemplate {
   id: string;
   cardNumber: string;
-  expirationDate: string;
+  creationDate: string;
   balance: number;
   ownerId: string;
 }
@@ -22,13 +24,12 @@ export interface CreditTemplate {
   maxLoanAmount: number; // Максимальная сумма кредита
 }
 
-export interface UserCredit extends CreditTemplate {
+export interface UserCredit extends Omit<CreditTemplate, "maxLoanAmount"> {
   id: string; // Уникальный идентификатор кредита пользователя
   creditNumber: string; // Номер кредитного договора
   loanAmount: number; // Сумма выданного кредита
   remainingAmount: number; // Остаток долга по кредиту
   startDate: string; // Дата выдачи кредита
-  endDate: string; // Дата погашения кредита (плановая)
   ownerId?: string; // Идентификатор пользователя, которому принадлежит кредит
   monthlyPayment: number; // Сумма ежемесячного платежа
 }

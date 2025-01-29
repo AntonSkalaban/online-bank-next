@@ -9,12 +9,12 @@ const API_KEY = process.env.NEXT_PUBLIC_CURRENCY_API_KEY;
 
 export const CurrencyApi = {
   baseKey: "currency",
-  getCurrency: () => {
+  getCurrency: (key: string, currencies: string[]) => {
     return queryOptions({
-      queryKey: [CurrencyApi.baseKey, "currency"],
+      queryKey: [CurrencyApi.baseKey, key || ""],
       queryFn: (meta) =>
         jsonApiInstance<CurrencyResponse>(
-          `${BASE_URL}?apikey=${API_KEY}&currencies=EUR%2CUSD&base_currency=BYN`,
+          `${BASE_URL}?apikey=${API_KEY}&currencies=${currencies.join("%2С")}&base_currency=BYN`,
           {
             signal: meta.signal,
           },

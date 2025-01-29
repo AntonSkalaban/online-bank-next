@@ -18,7 +18,7 @@ export const FetchingTableBody: FC<FetchingTableBodyProps> = ({
       <ul className="table__body">
         {skeletonArray?.map((_, indx) => (
           <li key={indx} className="courses-table-item">
-            <Skeleton skeletonClassName="course-table-row" />
+            <Skeleton skeletonClassName="courses-table-item_skeleton" />
           </li>
         ))}
       </ul>

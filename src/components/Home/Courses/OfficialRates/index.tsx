@@ -2,7 +2,7 @@
 import { FC } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import { CurrencyApi } from "api/Currency";
+import { CurrencyApi } from "api/CurrencyApi";
 
 import { Table } from "../UI";
 
@@ -10,7 +10,7 @@ import "./styles.scss";
 
 export const OfficialRates: FC = () => {
   const { data, isFetching, isError } = useQuery({
-    ...CurrencyApi.getCurrency(),
+    ...CurrencyApi.getCurrency(["USD", "EUR"].join(""), ["USD", "EUR"]),
     select: (data) => ({
       data: Object.values(data.data),
       lastUpdate: data.meta.last_updated_at,

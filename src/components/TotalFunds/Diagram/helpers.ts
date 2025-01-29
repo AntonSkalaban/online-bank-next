@@ -1,10 +1,13 @@
+import { CurrencyExchangeData } from "types/currency";
 import { UserCard } from "types/products";
 
 import { chartBorderColors, chartColors } from "./constants";
 
 export const getLabels = (arr: UserCard[]) => arr.map(({ name }) => name);
-export const getValues = (arr: UserCard[]) => ({
-  data: arr.map(({ balance }) => balance),
+export const getValues = (arr: UserCard[], courses: CurrencyExchangeData) => ({
+  data: arr.map(({ currency, balance }) =>
+    currency === "BYN" ? balance : (1 / courses[currency].value) * balance,
+  ),
 });
 
 export const getColors = <T>(arr: T[]) => {
@@ -21,12 +24,15 @@ export const getColors = <T>(arr: T[]) => {
   );
 };
 
-export const getChartData = (userCards: UserCard[]) => ({
+export const getChartData = (
+  userCards: UserCard[],
+  courses: CurrencyExchangeData,
+) => ({
   labels: getLabels(userCards),
   datasets: [
     {
       label: "Card Distribution",
-      ...getValues(userCards),
+      ...getValues(userCards, courses),
       ...getColors(userCards),
       borderWidth: 1,
     },
