@@ -25,7 +25,7 @@ export default function TotalFunds() {
     isError: isRatesError,
   } = useQuery({
     ...CurrencyApi.getCurrency(uniqueCurrencies.join(""), uniqueCurrencies),
-    enabled: uniqueCurrencies.length > 0,
+    enabled: cards && cards?.length > 0,
     select: (data) => data.data,
   });
 

@@ -3,10 +3,10 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { CardButtonProps } from "./types";
+import { NavCardProps } from "./types";
 import "./style.scss";
 
-export const CardButton: FC<CardButtonProps> = ({
+export const NavCard: FC<NavCardProps> = ({
   data: { title, subtitle, img, href },
   btnSize = "medium",
 }) => {

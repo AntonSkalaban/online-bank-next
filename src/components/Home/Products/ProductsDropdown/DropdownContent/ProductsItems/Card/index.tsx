@@ -1,18 +1,19 @@
 "use client";
 import { FC } from "react";
 
-import { getCardClassName, showLatestNumbers } from "./helpers";
+import { getCardClassName } from "utils/getCardClassName";
+
+import { showLatestNumbers } from "./helpers";
 import { CardProps } from "./types";
-import "./style.scss";
 
 export const Card: FC<CardProps> = ({
   card: { name, paymentSystem, isVirtual, currency, cardNumber, balance },
 }) => {
   return (
     <div className="product">
-      <div className="product__img-container product__img-container_card">
+      <div className="product__img-container card-img-container">
         <div
-          className={`product__img product__card-img ${getCardClassName(isVirtual, paymentSystem)}`}
+          className={`product__img card-img ${getCardClassName(isVirtual, paymentSystem)}`}
         ></div>
       </div>
       <div className="product__info">

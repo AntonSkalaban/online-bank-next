@@ -1,7 +1,7 @@
 import Diagram from "assets/svg/diagram.svg";
-import { ICardButton } from "types";
+import { INavCard } from "types";
 
-export const widgetsData: ICardButton[] = [
+export const widgetsData: INavCard[] = [
   {
     title: "Total funds",
     subtitle: "Shows all your accumulations",

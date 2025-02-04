@@ -6,15 +6,25 @@
   --light-green-color: #11bf6a;
   --grey-text-color: #6c757d;
   --grey-border: 1px solid #26262614;
-  --block-shadow: rgba(38, 38, 38, 0.04) 0px 1px 2px, rgba(38, 38, 38, 0.16) 0px 4px 8px;
+  --block-shadow: #2626260a 0px 1px 2px, #26262629 0px 4px 8px;
 
+
+  --item-hover: #2626260a;
+
+  --border-radius-8: 8px;
+  --hover-grey: #26262629;
   --headline-1: 34px;
   --headline-2: 28px;
   --headline-3: 22px;
+  --headline-4: 20px;
 
   --body-big: 16px;
   --body-medium: 14px;
 }
+
+
+
+ 
 
 .section-title {
   width: 100%;
@@ -39,7 +49,10 @@
   font-size: var(--headline-3);
 }
 
-
+.headline_4 {
+  font-size: var(--headline-4);
+  font-weight: 500;
+}
 
 .body-big {
   font-size: var(--body-big);
@@ -87,3 +100,28 @@ summary::-webkit-details-marker {
   }
 }
 
+
+.card-img-container {
+  width: 40px !important;
+  height: 25px !important;
+
+  border-radius: 3px;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+
+  &_visa {
+    background-image: linear-gradient(120deg, #000000b3, #000000, black);
+  }
+
+  &_mastercard {
+    background-image: linear-gradient(120deg, #ffd700b3, #ffd700, #ffd700);
+  }
+
+  &_virtual {
+    background-image: linear-gradient(120deg, #008080b3, #008000, #008000);
+  }
+}

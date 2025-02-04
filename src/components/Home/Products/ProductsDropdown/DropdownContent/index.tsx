@@ -40,15 +40,16 @@ export const DropdownContent: FC<DropdownContentProps> = ({ productType }) => {
 
   return (
     <>
-      <ul className="products__list">
-        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-        {visibleProducts.map((product: any) => (
-          <li key={product.id} className="products__list-item">
-            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            {components[productType](product as any)}
-          </li>
-        ))}
-      </ul>
+      {
+        <ul className="products__list">
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+          {visibleProducts.map((product: any) => (
+            <li key={product.id} className="products__list-item">
+              {components[productType](product)}
+            </li>
+          ))}
+        </ul>
+      }
       {!showAll && data.length > 2 && (
         <div onClick={handleClick}>
           <p className="products__show-all">Show All</p>

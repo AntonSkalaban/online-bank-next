@@ -1,6 +1,11 @@
 import { ReactNode } from "react";
 
-export interface ICardButton {
+export interface IOption {
+  title: string;
+  value: string;
+}
+
+export interface INavCard {
   title: string;
   subtitle?: string;
   img: string;

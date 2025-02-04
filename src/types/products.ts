@@ -1,7 +1,12 @@
-export type ProductsType = "cards" | "credits";
+export type ProductsType = "card" | "credit";
 export type PaymentSystem = "Visa" | "MasterCard";
+
+export enum PaymentSystemEnum {
+  visa = "Visa",
+  mastercard = "MasterCard",
+}
 export interface CardTemplate {
-  paymentSystem: PaymentSystem;
+  paymentSystem: PaymentSystemEnum;
   name: string;
   period: number;
   currency: string;

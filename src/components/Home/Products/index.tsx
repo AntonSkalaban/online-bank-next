@@ -1,7 +1,6 @@
 import { FC } from "react";
 
-import { userCards } from "constants/userCards";
-import { userCredits } from "constants/userCredits";
+import { PaymentSystemEnum } from "types/products";
 
 import { ProductsDropdown } from "./ProductsDropdown";
 import "./style.scss";
@@ -14,14 +13,10 @@ export const Products: FC = () => {
       <div className="products-section__dropdown-list">
         <ProductsDropdown
           title={"Cards"}
-          productType={"cards"}
-          products={userCards}
+          productType={"card"}
+          params={`paymentSystem=${PaymentSystemEnum.visa}&currency=EUR`}
         />
-        <ProductsDropdown
-          title={"Credits"}
-          productType={"credits"}
-          products={userCredits}
-        />
+        <ProductsDropdown title={"Credits"} productType={"credit"} />
       </div>
     </section>
   );

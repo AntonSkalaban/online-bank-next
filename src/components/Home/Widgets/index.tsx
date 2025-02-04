@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { CardButton } from "components/UI";
+import { NavCard } from "components/UI";
 
 import { widgetsData } from "./constants";
 
@@ -11,7 +11,7 @@ export const Widgets: FC = () => {
 
       <div>
         {widgetsData.map((btnData) => (
-          <CardButton key={btnData.title} data={btnData} btnSize={"big"} />
+          <NavCard key={btnData.title} data={btnData} btnSize={"big"} />
         ))}
       </div>
     </section>

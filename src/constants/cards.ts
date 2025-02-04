@@ -1,36 +1,39 @@
-import { CardTemplate } from "types/products";
+import { CardTemplate, PaymentSystemEnum } from "types/products";
+
+export const cardType = ["Visa", "MasterCard", "BelCard"];
+export const currency = ["USD", "EUR", "BYN"];
 
 export const cards: CardTemplate[] = [
   {
-    paymentSystem: "Visa",
+    paymentSystem: PaymentSystemEnum.visa,
     name: "Visa classic",
     period: 60,
     currency: "USD",
     isVirtual: false,
   },
   {
-    paymentSystem: "Visa",
+    paymentSystem: PaymentSystemEnum.visa,
     name: "Visa Gold",
     period: 60,
     currency: "USD",
     isVirtual: false,
   },
   {
-    paymentSystem: "Visa",
+    paymentSystem: PaymentSystemEnum.visa,
     name: "Visa classic",
     period: 60,
     currency: "EUR",
     isVirtual: false,
   },
   {
-    paymentSystem: "Visa",
+    paymentSystem: PaymentSystemEnum.visa,
     name: "Visa virtual",
     period: 60,
     currency: "USD",
     isVirtual: true,
   },
   {
-    paymentSystem: "Visa",
+    paymentSystem: PaymentSystemEnum.visa,
     name: "Visa virtual",
     period: 60,
     currency: "EUR",
@@ -38,28 +41,28 @@ export const cards: CardTemplate[] = [
   },
 
   {
-    paymentSystem: "MasterCard",
+    paymentSystem: PaymentSystemEnum.mastercard,
     name: "Mastercard classic",
     period: 60,
     currency: "USD",
     isVirtual: false,
   },
   {
-    paymentSystem: "MasterCard",
+    paymentSystem: PaymentSystemEnum.mastercard,
     name: "Mastercard classic",
     period: 24,
     currency: "EUR",
     isVirtual: false,
   },
   {
-    paymentSystem: "MasterCard",
+    paymentSystem: PaymentSystemEnum.mastercard,
     name: "Mastercard virtual",
     period: 24,
     currency: "USD",
     isVirtual: true,
   },
   {
-    paymentSystem: "MasterCard",
+    paymentSystem: PaymentSystemEnum.mastercard,
     name: "Mastercard virtual",
     period: 24,
     currency: "EUR",

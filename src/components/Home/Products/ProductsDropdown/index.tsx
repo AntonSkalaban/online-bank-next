@@ -12,13 +12,14 @@ import "./style.scss";
 export const ProductsDropdown: FC<ProductsDropdownProps> = ({
   title,
   productType,
+  params,
 }) => {
   return (
     <div className="dropdown">
-      <details className="dropdown__header" open={productType === "cards"}>
+      <details className="dropdown__header" open={productType === "card"}>
         <summary className="dropdown__summary">
           <span className="dropdown__span">
-            <h3>{title}</h3>
+            <h4 className="dropdown__title headline headline_3">{title}</h4>
             <Image
               src={Checkmark}
               className="dropdown__arrow"
@@ -26,7 +27,7 @@ export const ProductsDropdown: FC<ProductsDropdownProps> = ({
             />
           </span>
 
-          <Link href={""}>
+          <Link href={`request/${productType}${params ? `?${params}` : ""}`}>
             <span className="dropdown__plus-container">
               <Image src={Plus} alt={`request-${productType}`} />
             </span>
