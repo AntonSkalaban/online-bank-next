@@ -48,7 +48,7 @@ export const Select: FC<SelectProps> = ({ options, paramsName }) => {
       >
         <summary className="select__summary">
           <span className="select__span">
-            <p className="body-text body-big">{selectOption?.title}</p>
+            {selectOption?.content}
             <Image
               src={Checkmark}
               className="select__arrow"
@@ -60,13 +60,13 @@ export const Select: FC<SelectProps> = ({ options, paramsName }) => {
 
       <div role="definition" className="select__body">
         <ul className="select__options">
-          {options.map(({ title, value }) => (
+          {options.map(({ content, value }) => (
             <li
               key={value}
               className={`select__option ${selectOption?.value === value ? "select__option_select" : ""} body-text body-big`}
               onClick={handleClick(value)}
             >
-              {title}
+              {content}
             </li>
           ))}
         </ul>

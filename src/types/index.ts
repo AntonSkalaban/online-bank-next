@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export interface IOption {
-  title: string;
+  content: ReactNode;
   value: string;
 }
 

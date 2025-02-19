@@ -1,1 +1,1 @@
-export * from "./CardsList/index";
+export * from "./Card/CardsList/index";

@@ -6,7 +6,7 @@ export const CreditsApi = {
   baseKey: "credits",
   getCards: <T>() => {
     return queryOptions({
-      queryKey: [CreditsApi.baseKey, "credits"],
+      queryKey: [CreditsApi.baseKey],
       queryFn: () => FirestoreApi.getItems<T>(CreditsApi.baseKey),
     });
   },

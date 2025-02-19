@@ -14,7 +14,7 @@ export default function TotalFunds() {
     isFetching,
     isError,
   } = useQuery({
-    ...CardsApi.getCards<UserCard>("cards"),
+    ...CardsApi.getCards<UserCard>(),
   });
 
   const uniqueCurrencies = getUniqueCurrencies(cards);

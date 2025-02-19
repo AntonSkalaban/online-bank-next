@@ -13,7 +13,7 @@ export const DropdownContent: FC<DropdownContentProps> = ({ productType }) => {
   const { data, isFetching, isError } = useQuery({
     ...productsApi[productType](),
   });
-
+  console.log(data);
   const handleClick = () => {
     setShowAll((prev) => !prev);
   };

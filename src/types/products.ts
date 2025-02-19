@@ -1,10 +1,11 @@
 export type ProductsType = "card" | "credit";
-export type PaymentSystem = "Visa" | "MasterCard";
 
 export enum PaymentSystemEnum {
   visa = "Visa",
   mastercard = "MasterCard",
+  belCard = "BelCard",
 }
+
 export interface CardTemplate {
   paymentSystem: PaymentSystemEnum;
   name: string;
@@ -16,7 +17,7 @@ export interface CardTemplate {
 export interface UserCard extends CardTemplate {
   id: string;
   cardNumber: string;
-  creationDate: string;
+  creationDate: number;
   balance: number;
   ownerId: string;
 }

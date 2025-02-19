@@ -1,4 +1,10 @@
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDocs,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "constants/firebaseConfig";
 
 export const FirestoreApi = {
@@ -14,8 +20,19 @@ export const FirestoreApi = {
     return fetchedData;
   },
 
-  createItem: async <T>(collectionName: string, post: Omit<T, "id">) => {
-    const response = await addDoc(collection(db, collectionName), post);
+  createItem: async <T>(collectionName: string, item: Omit<T, "id">) => {
+    const response = await addDoc(collection(db, collectionName), item);
     return response.id;
+  },
+
+  updateItem: async <T>(
+    collectionName: string,
+    // itemId: string,
+    newData: Partial<T> & { id: string },
+  ) => {
+    const itemRef = doc(db, collectionName);
+
+    await updateDoc(itemRef, newData);
+    return newData.id;
   },
 };

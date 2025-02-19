@@ -1,5 +1,5 @@
 import {
-  // Courses,
+  Courses,
   OfficesAndATMs,
   Products,
   Services,
@@ -16,7 +16,7 @@ export default function Home() {
         <Services />
         <Products />
         <Widgets />
-        {/* <Courses /> */}
+        <Courses />
         <OfficesAndATMs />
       </Wrapper>
     </div>

@@ -1,21 +1,25 @@
 import { useMemo } from "react";
 
 import { IOption } from "types/index";
+import { PaymentSystemEnum } from "types/products";
 import { CardsList } from "components/Request";
 import { Select, Wrapper } from "components/UI";
-import { cardType, currency } from "constants/index";
+import { currency } from "constants/index";
 
 import "./style.scss";
 
 const createOptionsArray = (arr: string[]): IOption[] => {
   return arr.map((type) => ({
-    title: type,
+    content: <p className="body-text body-big">{type}</p>,
     value: type,
   }));
 };
 
 export default function Card() {
-  const cardTypesOptions = useMemo(() => createOptionsArray(cardType), []);
+  const cardTypesOptions = useMemo(
+    () => createOptionsArray(Object.values(PaymentSystemEnum)),
+    [],
+  );
   const cardCurrencyOptions = useMemo(() => createOptionsArray(currency), []);
 
   return (

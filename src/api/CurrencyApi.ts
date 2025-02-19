@@ -14,7 +14,7 @@ export const CurrencyApi = {
       queryKey: [CurrencyApi.baseKey, key || ""],
       queryFn: (meta) =>
         jsonApiInstance<CurrencyResponse>(
-          `${BASE_URL}?apikey=${API_KEY}&currencies=${currencies.join("%2С")}&base_currency=BYN`,
+          `${BASE_URL}?apikey=${API_KEY}&currencies=${currencies.join(",")}&base_currency=BYN`,
           {
             signal: meta.signal,
           },

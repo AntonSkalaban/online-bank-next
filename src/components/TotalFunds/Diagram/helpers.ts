@@ -3,10 +3,18 @@ import { UserCard } from "types/products";
 
 import { chartBorderColors, chartColors } from "./constants";
 
+export const getPriceInBYN = (
+  currency: string,
+  courses: CurrencyExchangeData,
+  balance: number,
+) => {
+  return (1 / courses[currency].value) * balance;
+};
+
 export const getLabels = (arr: UserCard[]) => arr.map(({ name }) => name);
 export const getValues = (arr: UserCard[], courses: CurrencyExchangeData) => ({
   data: arr.map(({ currency, balance }) =>
-    currency === "BYN" ? balance : (1 / courses[currency].value) * balance,
+    currency === "BYN" ? balance : getPriceInBYN(currency, courses, balance),
   ),
 });
 
